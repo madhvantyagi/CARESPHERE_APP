@@ -1,0 +1,218 @@
+/* Base styling for the date display container */
+
+.date-display-container {
+
+    position: relative;
+    display: inline-block;
+}
+
+/* Button styling */
+/* Button styling */
+.show-dates-btn {
+    position: relative;
+    background: transparent;
+    color: #4d9aa6;
+    font-size: clamp(10px, 3vw, 14px);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+/* Multi-layered text glow */
+.show-dates-btn {
+    text-shadow:
+        0 0 1px rgba(126, 34, 206, 0.2),
+        0 0 4px rgba(126, 34, 206, 0.2),
+        0 0 8px rgba(126, 34, 206, 0.1),
+        0 0 12px rgba(126, 34, 206, 0.05),
+        0 0 16px rgba(126, 34, 206, 0.025);
+}
+
+/* Extended glow effect using multiple pseudo-elements */
+.show-dates-btn::before,
+.show-dates-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+
+
+
+/* Hover state */
+
+
+.show-dates-btn:hover::before,
+.show-dates-btn:hover::after {
+    opacity: 1;
+    width: 150%;
+    height: 150%;
+}
+
+/* Animations */
+@keyframes pulsateGlow {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Popup container */
+.dates-popup {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(calc(100vw - 2rem), 20rem);
+    max-height: min(calc(100vh - 4rem), 24rem);
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header section */
+.popup-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.popup-title {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Close button */
+.popup-close {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    transition: all 0.2s ease;
+    padding: 0;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #374151;
+}
+
+.popup-close svg {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+/* Dates container */
+.dates-container {
+    padding: 0.75rem;
+    overflow-y: auto;
+    scrollbar-width: none;
+    height:9vh;
+    max-height:12vh;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    flex-grow: 1;
+}
+
+.dates-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+/* Individual date items */
+.date-item {
+    padding: 0.625rem;
+    margin-bottom: 0.5rem;
+    background: rgba(238, 242, 255, 0.75);
+    border: 1px solid rgba(147, 51, 234, 0.1);
+    border-radius: 0.375rem;
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+    color: #4b5563;
+    transition: all 0.2s ease;
+}
+
+.date-item:last-child {
+    margin-bottom: 0;
+}
+
+.date-item:hover {
+    background: rgba(238, 242, 255, 1);
+    transform: translateY(-1px);
+}
+
+/* Animation classes */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -0.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.dates-popup {
+    animation: slideIn 0.2s ease-out;
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 640px) {
+    .dates-popup {
+        width: calc(100vw - 2rem);
+        max-height: 60vh;
+    }
+
+    .popup-header {
+        padding: 0.625rem 0.75rem;
+    }
+
+    .dates-container {
+        padding: 0.5rem;
+    }
+
+    .date-item {
+        padding: 0.5rem;
+        margin-bottom: 0.375rem;
+    }
+}

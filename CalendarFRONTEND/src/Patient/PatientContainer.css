@@ -1,0 +1,38 @@
+.ApplyOpacity {
+  filter: brightness(0.5);  
+  transition: filter 0.3s;
+}
+
+.contract-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(248, 234, 225, 0.87);
+}
+
+.centered-message {
+
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.message{
+      font-family: "Montserrat";
+      font-size: clamp(18px , 3vw , 28px);
+      color:black;
+      font-weight:600;
+  
+}
+
+a {
+  margin-top:10px;
+  font-family: "Montserrat";
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 600;
+  color:#f79b45e3
+
+}

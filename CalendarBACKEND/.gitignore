@@ -1,0 +1,4 @@
+node_modules
+.ebextensions
+chaya-env.zip
+.env

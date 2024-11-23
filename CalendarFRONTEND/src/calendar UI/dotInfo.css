@@ -1,0 +1,116 @@
+.info-icon-wrapper {
+    width: 90vw;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    justify-content: right;
+    /* border:solid 1px red; */
+    
+}
+
+.info-icon {
+    padding-top: 1vh;
+    width: 24px;
+    height: 24px;
+    color: #f79b45;
+   
+
+}
+
+.info-popup {
+    position: absolute;
+    z-index: 50;
+    width: clamp(250px, 90vw, 400px);
+    background-color:#fcfcfc;
+    border-radius: clamp(20px, 1.5vw, 12px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    padding: clamp(12px, 2vw, 20px);
+    /* Responsive padding */
+    font-family: "Montserrat", sans-serif;
+    right: 0;
+    top: calc(100% + 8px);
+}
+
+.status-item {
+    /* border:solid 1px purple; */
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(8px, 1.5vw, 12px);
+    /* Responsive gap */
+    margin-bottom: clamp(8px, 1.5vw, 16px);
+    /* Responsive margin */
+}
+
+.status-item:last-child {
+    margin-bottom: 0;
+}
+
+.status-emoji {
+    flex-shrink: 0;
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.5;
+    padding-top: 2px;
+}
+
+.status-text {
+    flex: 1;
+    font-size: clamp(12px, 1vw, 14px);
+    /* Responsive font size */
+    color: #374151;
+    line-height: 1.5;
+    margin: 0;
+    padding-top: 2px;
+    /* Aligns text with emoji */
+}
+
+.status-label {
+    font-weight: 600;
+    font-family: "Montserrat";
+    margin-right: 4px;
+}
+
+.info-popup {
+    opacity: 0;
+    transform: translateX(20px);
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.3s ease-out;
+}
+
+.info-popup.visible {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 640px) {
+    .info-popup {
+        width: 85vw;
+        max-width: 320px;
+    }
+
+    .status-text {
+        font-size: 12px;
+    }
+
+    .status-emoji {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-popup {
+        width: 90vw;
+        max-width: 280px;
+        padding: 10px;
+    }
+
+    .status-item {
+        gap: 6px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Alternative version with slight bounce effect */

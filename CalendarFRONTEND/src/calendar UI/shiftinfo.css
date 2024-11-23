@@ -1,0 +1,124 @@
+.shiftInfo {
+    background-color: white;
+    border-radius: 22px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 70vw;
+    max-width: 500px;
+    padding: 20px;
+    font-family: "Montserrat";
+    position: fixed;
+    z-index: 1000;
+    top:50%;
+    left:50%;
+    transform: translate(-50% , -50%);
+}
+
+.closing-X {
+    display: flex;
+    justify-content: space-between;
+        align-items: center;
+}
+
+.visitDate {
+    font-weight: bold;
+    font-size: clamp(14px, 3vw, 20px);
+        color: #333;
+    display: flex;
+    justify-content:end;
+}
+
+.XIcon {
+
+    cursor: pointer;
+    color: #ffffff;
+    width: 25px;
+    height: 25px;
+    background-color:#f79b45 ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+
+}
+
+.emptyDiv {
+    width: 25px;
+    height: 25px;
+}
+
+.shift-Main-div {
+             margin-top: 10px;
+            width: 100%;
+             max-height: 18vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-top: 15px;
+            gap: 2vw;
+            scrollbar-width: none;
+            /* border: solid 3px black; */
+    
+}
+
+.shift-timing-patient {
+    background-color: #fff4ed;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: space-between;
+    
+}
+
+.shift-time,
+.patient-name {
+  
+    font-size: clamp(10px, 3vw, 16px);
+    font-weight: 500;
+    color: #333;
+}
+
+.label {
+    color: #f79b45;
+    font-weight: bold;
+    padding-right: 10px;
+    
+}
+.link{
+    color: #ffffff;
+        font-weight: bold;
+        padding-right: 10px;
+            font-size: clamp(10px, 3vw, 16px);
+            text-decoration: none;
+
+}
+
+.smallIcon {
+    font-size: 10px;
+
+}
+
+.shift-time,
+.patient-name {
+    padding: 4px 0;
+
+}
+
+/* changing the background of the block as per the dot  */
+
+.shift-timing-yellow {
+
+    background-color: #fcd17ae4;;
+}
+
+.shift-timing-red {
+  
+    background-color: hwb(0 70% 7% / 0.871);
+}
+
+.shift-timing-green {
+
+    background-color: #8eeca4da;
+}

@@ -1,0 +1,29 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    
+    /* Prevent horizontal scroll if overflow occurs */
+}
+
+
+.App{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height:100vh;
+    width: 100vw;
+    background-color: rgba(248, 234, 225, 0.87);
+    font-family: "Montserrat";
+    /* overflow: hidden; */
+    }
+        .ApplyOpacity {
+            filter: brightness(0.6);
+            /* Adjust the value to increase/decrease blur */
+            transition: filter 0.3s;
+            /* background: linear-gradient(135deg, rgba(255, 245, 238, 0.2), rgba(255, 228, 225, 0.2)); */
+        }
+
